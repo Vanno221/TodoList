@@ -19,6 +19,13 @@ const string& List::getNameList() const{
     return this->nameList;
 }
 
+const string List::toString() const {
+    string stampa;
+    for (auto &element: this->lista)
+        stampa += "\n " + element.toString() + "\n ";
+    return stampa;
+}
+
 
 void List::setNameList(string name) {
     this->nameList = name;
@@ -89,12 +96,15 @@ int List::countTaskToDo() {
     return count;
 }
 
-int List::countTaskToDoDay(const tm &date) {
+string List::countTaskToDoDay(const tm &date) {
+    string elements;
     int count {0};
     for (auto elemet : this->lista)
         if (elemet.getDateTime().tm_mon == date.tm_mon && elemet.getDateTime().tm_mday == date.tm_mday && elemet.getDateTime().tm_year == date.tm_year) {
-            if (elemet.isChecked() == false)
+            if (elemet.isChecked() == false) {
                 count++;
+                elements += "\n " + elemet.toString() + "\n ";
+            }
         }
-    return count;
+    return elements + "\n Numero elementi: " + to_string(count) + "\n";
 }

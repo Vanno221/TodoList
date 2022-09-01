@@ -23,8 +23,9 @@ int main() {
                 "5) Completa/Decompleta un elemento \n"
                 "6) Salva su file \n"
                 "7) Carica da file \n"
-                "8) Conta attivita da fare \n"
+                "8) Numero attività totali \n"
                 "9) Check Day \n"
+                "10) Modifica Task \n"
 
                 "0) Esci \n " << endl;
 
@@ -44,9 +45,7 @@ int main() {
             case 2:
                 if(!lista.getNameList().empty()) {
                     cout << "lista: " + lista.getNameList() << endl;
-                    for (auto &element: lista.getElements())
-                        cout << "\n " + element.toString() + "\n " << endl;
-
+                    cout << lista.toString() << endl;
                 }
                 else
                     cout <<"Nessuna Lista presente";
@@ -56,7 +55,6 @@ int main() {
                 cout << "Inserire il nome dell' elemento: ";
                 getline(cin, nome);
                 if(!lista.getNameList().empty()) {
-                    tm data;
 
                     cout << "Inserisci la data di termine dell'attivita. \n";
                     cout << "Giorno: ";
@@ -78,14 +76,14 @@ int main() {
                     cout << "Nessuna Lista selezionata. \n";
                 break;
 
-                    case 4:
+            case 4:
                 if(!lista.getNameList().empty()){
                     cout << "Inserire il nome dell' elemento da rimuovere: ";
                     getline(cin, nome);
                     ls = lista.find(nome);
-                    if (ls != lista.getElements().end()) {
+                    if (ls->getName() == nome)
                         lista.removeElement(*ls);
-                    } else
+                    else
                         cout << "Elemento non trovato" << endl;
                 }
                 break;
@@ -96,7 +94,7 @@ int main() {
                     getline(cin, nome);
                     Task element {nome};
                     ls = lista.find(nome);
-                    if (ls != lista.getElements().end())
+                    if (ls->getName() == nome)
                         lista.toggleElement(element);
                     else
                         cout << "Elemento non trovato" << endl;
@@ -125,7 +123,6 @@ int main() {
 
             case 9:
                 if(!lista.getNameList().empty()) {
-                    tm data;
 
                     cout << "Inserisci una data. \n";
                     cout << "Giorno: ";
@@ -139,8 +136,45 @@ int main() {
                     cout << "Anno: ";
                     cin >> data.tm_year;
 
-                    cout << "\n Le attività da svolgere in tale data sono: " + to_string(lista.countTaskToDoDay(data)) << endl;
+                    cout << "\n Le attività da svolgere in tale data sono: \n" + lista.countTaskToDoDay(data) << endl;
 
+                }
+                break;
+
+            case 10:
+
+                if(!lista.getNameList().empty()){
+                    cout << "Inserire il nome dell' elemento da modificare: ";
+                    getline(cin, nome);
+                    ls = lista.find(nome);
+
+                    if (ls->getName() == nome) {
+                        string newName;
+                        tm dataUpdate;
+
+                        cout << "Aggiorna il nome: ";
+                        getline(cin, newName);
+
+                        lista.find(nome)->setName(newName);
+                        cout << "Aggiorna la data: \n";
+
+
+                        cout << "Giorno: ";
+                        cin >> dataUpdate.tm_mday;
+
+                        cout << "Inserisci la data di termine dell'attivita. \n";
+                        cout << "Mese: ";
+                        cin >> dataUpdate.tm_mon;
+
+                        cout << "Inserisci la data di termine dell'attivita. \n";
+                        cout << "Anno: ";
+                        cin >> dataUpdate.tm_year;
+
+                        lista.find(newName)->setDateTime(dataUpdate);
+                    }
+                    else {
+                        cout << "Elemento non trovato" << endl;
+                    }
                 }
                 break;
 
