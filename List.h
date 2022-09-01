@@ -42,7 +42,9 @@ class List {
 
         int countTaskToDo();
 
-        string countTaskToDoDay(const tm& date);
+        string getTaskToDoDay(const tm& date);
+
+        int countTaskToDoDay(const tm& date);
 
         const string toString() const;
 

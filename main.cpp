@@ -136,7 +136,7 @@ int main() {
                     cout << "Anno: ";
                     cin >> data.tm_year;
 
-                    cout << "\n Le attività da svolgere in tale data sono: \n" + lista.countTaskToDoDay(data) << endl;
+                    cout << "\n Le attività da svolgere in tale data sono: \n" + lista.getTaskToDoDay(data) << endl;
 
                 }
                 break;
