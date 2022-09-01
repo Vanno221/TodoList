@@ -49,6 +49,9 @@
 			"compileCommandFragments" : 
 			[
 				{
+					"fragment" : "-g"
+				},
+				{
 					"fragment" : "-std=gnu++11"
 				}
 			],
@@ -86,15 +89,15 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "gtest::@3ebb0790ad762459a80f"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "gtest_main::@3ebb0790ad762459a80f"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "core::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "unitTesting::@36f028580bb02cc8272a",
@@ -102,6 +105,10 @@
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
 			{
 				"fragment" : "",
 				"role" : "flags"
