@@ -1,0 +1,18 @@
+# ninja log v5
+0	284	1663149178411367764	CMakeFiles/core.dir/Task.cpp.o	2aec8902e5b72469
+0	430	1663149178559365805	CMakeFiles/my_executable.dir/main.cpp.o	19a8da4f059d6ee0
+0	519	1663149178647364642	CMakeFiles/core.dir/List.cpp.o	a330967338a14721
+519	529	1663149178659364482	libcore.a	191415ca42eb373b
+529	598	1663149178727363583	my_executable	e54b911776ab8595
+1	777	1663149178903361255	test/CMakeFiles/unitTesting.dir/runAllTests.cpp.o	be52ca94cc577605
+1	893	1663149179019359721	test/CMakeFiles/unitTesting.dir/ElementTest.cpp.o	477b348553f91cca
+2	983	1663149179111358504	test/CMakeFiles/unitTesting.dir/ListElementFixture.cpp.o	9807b9c909bd54cc
+3	1042	1663149179171357711	test/lib/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	1d29c4eca35fcd24
+2	1138	1663149179267356441	test/lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	6412ff2615c63227
+2	1832	1663149179959347294	test/lib/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	d0a292fea6925140
+3	3034	1663149181159331443	test/lib/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	7643068b59a71d5f
+3034	3061	1663149181187331073	lib/libgtest.a	294eaea046e91dab
+3061	3065	1663149181195330968	lib/libgtest_main.a	c0d2a0e8a83ef19a
+3061	3074	1663149181203330862	lib/libgmock.a	99a174e016c5ad0c
+3074	3079	1663149181207330809	lib/libgmock_main.a	3ab006872a5a8bf5
+3065	3165	1663149181291329700	test/unitTesting	44f6b17724bc0e94
