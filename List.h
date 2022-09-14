@@ -40,11 +40,11 @@ class List {
 
         void toggleElement(const Task& element);
 
-        int countTaskToDo() const;
+        int countTaskToDo();
 
-        string getTaskToDoDay(const tm& date) const;
+        string getTaskToDoDay(const tm& date);
 
-        int countTaskToDoDay(const tm& date) const;
+        int countTaskToDoDay(const tm& date);
 
         const string toString() const;
 

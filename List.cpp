@@ -88,7 +88,7 @@ void List::toggleElement(const Task &element) {
     find(element.getName())->toggle();
 }
 
-int List::countTaskToDo() const {
+int List::countTaskToDo() {
     int count {0};
     for (auto elemet : this->lista)
         if (elemet.isChecked() == false)
@@ -96,7 +96,7 @@ int List::countTaskToDo() const {
     return count;
 }
 
-string List::getTaskToDoDay(const tm &date) const{
+string List::getTaskToDoDay(const tm &date) {
     string elements;
     int count {0};
     for (auto elemet : this->lista)
@@ -109,7 +109,7 @@ string List::getTaskToDoDay(const tm &date) const{
     return elements + "\n Numero elementi: " + to_string(count) + "\n";
 }
 
-int List::countTaskToDoDay(const tm &date) const {
+int List::countTaskToDoDay(const tm &date) {
     string elements;
     int count {0};
     for (auto elemet : this->lista)
